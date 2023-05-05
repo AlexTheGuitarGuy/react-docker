@@ -8,4 +8,6 @@ node_js:
 
 before_install:
   - docker build -f Dockerfile.dev -t react-docker .
+
+script:
   - docker run react-docker yarn coverage
