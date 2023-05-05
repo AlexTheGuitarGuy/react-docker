@@ -1,5 +1,14 @@
 sudo: required
-servicer:
+
+language: node_js
+node_js:
+  - stable
+
+cache:
+  directories:
+    - node_modules
+
+service:
   - docker
 
 before_install:
