@@ -12,6 +12,6 @@ before_deploy:
   - npm install -g vercel
 deploy:
   provider: script
-  script: vercel --token $VERCEL_TOKEN --prod
+  script: vercel --token $VERCEL_TOKEN --prod --yes
   on:
     branch: main
