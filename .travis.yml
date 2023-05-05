@@ -1,16 +1,7 @@
-language: node_js
-node_js:
-  - "stable"
-cache:
-  directories:
-    - node_modules
-script:
-  - yarn test
-  - yarn build || true
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: main
+sudo: required
+servicer:
+  - docker
+
+before_install:
+  - docker build -f Dockerfile.dev -t react-docker .
+  - docker run react-docker yarn coverage
