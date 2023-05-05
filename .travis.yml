@@ -2,6 +2,10 @@ sudo: required
 servicer:
   - docker
 
+language: node_js
+node_js:
+  - "stable"
+
 before_install:
   - docker build -f Dockerfile.dev -t react-docker .
   - docker run react-docker yarn coverage
