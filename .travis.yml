@@ -7,3 +7,9 @@ before_install:
 
 script:
   - docker run react-docker yarn coverage
+
+deploy:
+  provider: script
+  script: vercel --token $VERCEL_TOKEN --prod
+  on:
+    branch: main
