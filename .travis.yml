@@ -8,6 +8,8 @@ before_install:
 script:
   - docker run react-docker yarn coverage
 
+before_deploy:
+  - npm install -g vercel
 deploy:
   provider: script
   script: vercel --token $VERCEL_TOKEN --prod
